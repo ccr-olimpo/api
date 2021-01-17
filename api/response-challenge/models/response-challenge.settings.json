@@ -48,8 +48,8 @@
       "model": "user"
     },
     "challenge": {
-      "model": "challenge",
-      "via": "response_challenges"
+      "via": "response_challenges",
+      "model": "challenge"
     }
   }
 }

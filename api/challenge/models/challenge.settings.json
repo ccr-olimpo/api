@@ -36,13 +36,17 @@
       "required": true
     },
     "response_challenges": {
-      "via": "challenge",
-      "collection": "response-challenge"
+      "collection": "response-challenge",
+      "via": "challenge"
     },
     "user": {
-      "via": "challenges",
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "user",
+      "via": "challenges"
+    },
+    "level": {
+      "type": "string",
+      "default": "easy"
     }
   }
 }

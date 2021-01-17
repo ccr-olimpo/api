@@ -657,6 +657,10 @@
               }
             }
           },
+          "level": {
+            "type": "string",
+            "default": "easy"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -700,6 +704,10 @@
           },
           "user": {
             "type": "string"
+          },
+          "level": {
+            "type": "string",
+            "default": "easy"
           },
           "published_at": {
             "type": "string",

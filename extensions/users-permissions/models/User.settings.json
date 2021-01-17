@@ -60,7 +60,8 @@
       "configurable": false
     },
     "score": {
-      "type": "integer"
+      "type": "integer",
+      "default": 0
     },
     "response_challenges": {
       "collection": "response-challenge",
@@ -72,8 +73,8 @@
       "required": true
     },
     "challenges": {
-      "collection": "challenge",
-      "via": "user"
+      "via": "user",
+      "collection": "challenge"
     }
   }
 }

@@ -1253,7 +1253,8 @@
             }
           },
           "score": {
-            "type": "integer"
+            "type": "integer",
+            "default": 0
           },
           "response_challenges": {
             "type": "array",
@@ -1348,6 +1349,9 @@
                 "user": {
                   "type": "string"
                 },
+                "level": {
+                  "type": "string"
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -1403,7 +1407,8 @@
             "type": "string"
           },
           "score": {
-            "type": "integer"
+            "type": "integer",
+            "default": 0
           },
           "response_challenges": {
             "type": "array",
