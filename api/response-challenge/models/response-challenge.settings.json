@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "response_challenges",
+  "info": {
+    "name": "ResponseChallenge",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "githubLink": {
+      "type": "string"
+    },
+    "projectImage": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "cover": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "users_permissions_user": {
+      "via": "response_challenges",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "challenge": {
+      "model": "challenge",
+      "via": "response_challenges"
+    }
+  }
+}

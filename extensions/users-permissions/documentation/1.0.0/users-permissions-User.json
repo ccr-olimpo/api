@@ -1188,7 +1188,8 @@
         "required": [
           "id",
           "username",
-          "email"
+          "email",
+          "young"
         ],
         "properties": {
           "id": {
@@ -1250,13 +1251,122 @@
                 "type": "string"
               }
             }
+          },
+          "score": {
+            "type": "integer"
+          },
+          "response_challenges": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "githubLink": {
+                  "type": "string"
+                },
+                "projectImage": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "cover": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "users_permissions_user": {
+                  "type": "string"
+                },
+                "challenge": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "young": {
+            "type": "boolean",
+            "default": true
+          },
+          "challenges": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "proposingCompany",
+                "description",
+                "estimatedTime",
+                "technologies",
+                "evaluationPeriod"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "proposingCompany": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "estimatedTime": {
+                  "type": "integer"
+                },
+                "technologies": {
+                  "type": "object"
+                },
+                "evaluationPeriod": {
+                  "type": "string"
+                },
+                "response_challenges": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "user": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
       "NewUsersPermissionsUser": {
         "required": [
           "username",
-          "email"
+          "email",
+          "young"
         ],
         "properties": {
           "username": {
@@ -1291,6 +1401,25 @@
           },
           "role": {
             "type": "string"
+          },
+          "score": {
+            "type": "integer"
+          },
+          "response_challenges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "young": {
+            "type": "boolean",
+            "default": true
+          },
+          "challenges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "created_by": {
             "type": "string"

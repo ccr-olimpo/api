@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/challenges": {
+    "/response-challenges": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -10,9 +10,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Challenge"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -51,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Challenge"
+          "Response-challenge"
         ],
         "parameters": [
           {
@@ -201,72 +202,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Challenge"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Challenge"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewChallenge"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/challenges/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
                   "properties": {
-                    "count": {
-                      "type": "integer"
+                    "foo": {
+                      "type": "string"
                     }
                   }
                 }
@@ -306,12 +244,22 @@
         },
         "summary": "",
         "tags": [
-          "Challenge"
+          "Response-challenge"
         ],
-        "parameters": []
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewResponse-challenge"
+              }
+            }
+          }
+        }
       }
     },
-    "/challenges/{id}": {
+    "/response-challenges/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +269,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Challenge"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -359,7 +311,64 @@
         },
         "summary": "",
         "tags": [
-          "Challenge"
+          "Response-challenge"
+        ],
+        "parameters": []
+      }
+    },
+    "/response-challenges/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Response-challenge"
         ],
         "parameters": [
           {
@@ -383,7 +392,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Challenge"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -421,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Challenge"
+          "Response-challenge"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewChallenge"
+                "$ref": "#/components/schemas/NewResponse-challenge"
               }
             }
           }
@@ -495,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Challenge"
+          "Response-challenge"
         ],
         "parameters": [
           {
@@ -514,74 +527,76 @@
   },
   "components": {
     "schemas": {
-      "Challenge": {
+      "Response-challenge": {
         "required": [
-          "id",
-          "name",
-          "proposingCompany",
-          "description",
-          "estimatedTime",
-          "technologies",
-          "evaluationPeriod"
+          "id"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
+          "githubLink": {
             "type": "string"
           },
-          "proposingCompany": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "estimatedTime": {
-            "type": "integer"
-          },
-          "technologies": {
-            "type": "object"
-          },
-          "evaluationPeriod": {
-            "type": "string",
-            "format": "date"
-          },
-          "response_challenges": {
+          "projectImage": {
             "type": "array",
             "items": {
               "required": [
-                "id"
+                "id",
+                "name",
+                "hash",
+                "mime",
+                "size",
+                "url",
+                "provider"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "githubLink": {
+                "name": {
                   "type": "string"
                 },
-                "projectImage": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "cover": {
+                "alternativeText": {
                   "type": "string"
                 },
-                "title": {
+                "caption": {
                   "type": "string"
                 },
-                "description": {
+                "width": {
+                  "type": "integer"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "formats": {
+                  "type": "object"
+                },
+                "hash": {
                   "type": "string"
                 },
-                "users_permissions_user": {
+                "ext": {
                   "type": "string"
                 },
-                "challenge": {
+                "mime": {
                   "type": "string"
                 },
-                "published_at": {
+                "size": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "previewUrl": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "provider_metadata": {
+                  "type": "object"
+                },
+                "related": {
                   "type": "string"
                 },
                 "created_by": {
@@ -593,7 +608,80 @@
               }
             }
           },
-          "user": {
+          "cover": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "users_permissions_user": {
             "required": [
               "id",
               "username",
@@ -657,48 +745,79 @@
               }
             }
           },
+          "challenge": {
+            "required": [
+              "id",
+              "name",
+              "proposingCompany",
+              "description",
+              "estimatedTime",
+              "technologies",
+              "evaluationPeriod"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "proposingCompany": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "estimatedTime": {
+                "type": "integer"
+              },
+              "technologies": {
+                "type": "object"
+              },
+              "evaluationPeriod": {
+                "type": "string"
+              },
+              "response_challenges": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "user": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
           }
         }
       },
-      "NewChallenge": {
-        "required": [
-          "name",
-          "proposingCompany",
-          "description",
-          "estimatedTime",
-          "technologies",
-          "evaluationPeriod"
-        ],
+      "NewResponse-challenge": {
         "properties": {
-          "name": {
+          "githubLink": {
             "type": "string"
           },
-          "proposingCompany": {
+          "title": {
             "type": "string"
           },
           "description": {
             "type": "string"
           },
-          "estimatedTime": {
-            "type": "integer"
+          "users_permissions_user": {
+            "type": "string"
           },
-          "technologies": {
-            "type": "object"
-          },
-          "evaluationPeriod": {
-            "type": "string",
-            "format": "date"
-          },
-          "response_challenges": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "user": {
+          "challenge": {
             "type": "string"
           },
           "published_at": {
@@ -715,9 +834,5 @@
       }
     }
   },
-  "tags": [
-    {
-      "name": "Challenge"
-    }
-  ]
+  "tags": []
 }

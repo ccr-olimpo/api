@@ -15,7 +15,7 @@
       "type": "string",
       "required": true
     },
-    "title": {
+    "proposingCompany": {
       "type": "string",
       "required": true
     },
@@ -34,6 +34,15 @@
     "evaluationPeriod": {
       "type": "date",
       "required": true
+    },
+    "response_challenges": {
+      "via": "challenge",
+      "collection": "response-challenge"
+    },
+    "user": {
+      "via": "challenges",
+      "plugin": "users-permissions",
+      "model": "user"
     }
   }
 }

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/response-challenges",
+      "handler": "response-challenge.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/response-challenges/count",
+      "handler": "response-challenge.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/response-challenges/:id",
+      "handler": "response-challenge.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/response-challenges",
+      "handler": "response-challenge.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/response-challenges/:id",
+      "handler": "response-challenge.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/response-challenges/:id",
+      "handler": "response-challenge.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

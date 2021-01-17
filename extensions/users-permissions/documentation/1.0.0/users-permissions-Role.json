@@ -528,7 +528,8 @@
               "required": [
                 "id",
                 "username",
-                "email"
+                "email",
+                "young"
               ],
               "properties": {
                 "id": {
@@ -560,6 +561,24 @@
                 },
                 "role": {
                   "type": "string"
+                },
+                "score": {
+                  "type": "integer"
+                },
+                "response_challenges": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "young": {
+                  "type": "boolean"
+                },
+                "challenges": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "created_by": {
                   "type": "string"
